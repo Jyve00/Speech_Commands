@@ -13,4 +13,9 @@ The following datasets will be used:
 - [VOiCES](https://iqtlabs.github.io/voices/)
 - [LibriSpeech 960h](http://www.openslr.org/12/)
 - [Switchboard 300h](https://catalog.ldc.upenn.edu/LDC97S62)
+- [Mozilla's Common Voice Dataset](https://commonvoice.mozilla.org/en/datasets)
+- [Speech Accent Archive](https://www.kaggle.com/rtatman/speech-accent-archive)
 - [Audio, Speech, and Vision Processing Lab Emotional  Sound database (ASVP-ESD)](https://www.kaggle.com/dejolilandry/asvpesdspeech-nonspeech-emotional-utterances)
+
+
+
