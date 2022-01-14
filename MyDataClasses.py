@@ -12,5 +12,7 @@ import matplotlib.pyplot as plt
 
 SAMPLE_RATE = 16000
 N_FFT = int(0.025 * SAMPLE_RATE)   # 25 ms 
-HOP_LENGTH = int(0.01 * SAMPLE_RATE)
+HOP_LENGTH = int(0.01 * SAMPLE_RATE)  # 10 ms
 N_MELS = 13
+
+
