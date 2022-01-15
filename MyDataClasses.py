@@ -43,7 +43,7 @@ ASVP_metadata = '/Users/stephen/Desktop/Speech_Recognition/Data/ASVP-ESD_UPDATE/
 class ASVPDataset(Dataset):
     # constructor 
     def __init__(self, annotations_file, audio_dir, target_sample_rate, num_samples, device, transformation=None): 
-        self.annotations_file = pd.read_csv(annotations_file)
+        self.annotations_file = annotations_file
         self.audio_dir = audio_dir 
         self.target_sample_rate = target_sample_rate
         self.num_samples = num_samples 
@@ -103,25 +103,3 @@ class ASVPDataset(Dataset):
         return self.annotations_file.iloc[index, 0]  # grab from "label" column  
 
 
-if __name__ == '__main__':
-    ANNOTATIONS_FILE = ASVP_metadata
-    AUDIO_DIR = ASVP_dir
-    TARGET_SAMPLE_RATE = SAMPLE_RATE
-    NUM_SAMPLES = SAMPLE_RATE*20
-
-    if torch.cuda.is_available():
-        device = "cuda"
-    else:
-        device = "cpu"
-    print(f"Using device {device}")
-
-    asvp = ASVPDataset(
-        ANNOTATIONS_FILE, 
-        AUDIO_DIR, 
-        TARGET_SAMPLE_RATE, 
-        NUM_SAMPLES, 
-        device)
-
-
-    print(f"There are {len(asvp)} samples in the dataset.")
-    signal, label = asvp[0]
