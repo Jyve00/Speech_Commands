@@ -95,8 +95,8 @@ class ASVPDataset(Dataset):
     def _get_audio_sample_path(self, index):
         #fold = f"fold{self.annotations.iloc[index, 2]}"    # grab from "Folder" column 
         #path = os.path.join(self.audio_dir, fold, self.annotations_file.iloc[index, 1]) # combine to make full PATH
-        fold = self.annotations_file.iloc[index, 2]
-        path = os.path.join(self.audio_dir + fold + self.annotations_file.iloc[index, 1])
+        fold = self.annotations_file.iloc[index, 1]
+        path = os.path.join(self.audio_dir + fold + self.annotations_file.iloc[index, 2])
         return path 
     
     def _get_audio_sample_label(self, index):
