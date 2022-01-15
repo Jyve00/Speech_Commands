@@ -1,5 +1,7 @@
 #  custom Torch Dataset objects for each dataset
+
 import pandas as pd 
+import os 
 import torch 
 import torchaudio 
 from torch.utils.data import Dataset
@@ -121,5 +123,5 @@ if __name__ == '__main__':
         device)
 
 
-    print(f"There are {len(usd)} samples in the dataset.")
-    signal, label = usd[0]
+    print(f"There are {len(asvp)} samples in the dataset.")
+    signal, label = asvp[0]
