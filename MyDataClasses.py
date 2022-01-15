@@ -110,7 +110,7 @@ if __name__ == '__main__':
     NUM_SAMPLES = SAMPLE_RATE*20
 
     if torch.cuda.is_available():
-        device - "cuda"
+        device = "cuda"
     else:
         device = "cpu"
     print(f"Using device {device}")
