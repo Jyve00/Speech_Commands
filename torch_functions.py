@@ -4,6 +4,7 @@
 
 import torch
 import torchaudio
+import librosa 
 
 import io
 import os
@@ -17,21 +18,21 @@ import matplotlib.pyplot as plt
 from IPython.display import Audio, display
 
 def print_stats(waveform, sample_rate=None, src=None):
-    if src:
-        print("-" * 10)
-        print("Source:", src)
-        print("-" * 10)
-        if sample_rate:
-            print("Sample Rate:", sample_rate)
-            print("Shape:", tuple(waveform.shape))
-            print("Dtype:", waveform.dtype)
-            print(f" - Max:     {waveform.max().item():6.3f}")
-            print(f" - Min:     {waveform.min().item():6.3f}")
-            print(f" - Mean:    {waveform.mean().item():6.3f}")
-            print(f" - Std Dev: {waveform.std().item():6.3f}")
-            print()
-            print(waveform)
-            print()
+  if src:
+    print("-" * 10)
+    print("Source:", src)
+    print("-" * 10)
+  if sample_rate:
+    print("Sample Rate:", sample_rate)
+  print("Shape:", tuple(waveform.shape))
+  print("Dtype:", waveform.dtype)
+  print(f" - Max:     {waveform.max().item():6.3f}")
+  print(f" - Min:     {waveform.min().item():6.3f}")
+  print(f" - Mean:    {waveform.mean().item():6.3f}")
+  print(f" - Std Dev: {waveform.std().item():6.3f}")
+  print()
+  print(waveform)
+  print()
 
 
 def plot_waveform(waveform, sample_rate, title="Waveform", xlim=None, ylim=None):
