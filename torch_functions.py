@@ -75,6 +75,18 @@ def plot_specgram(waveform, sample_rate, title="Spectrogram", xlim=None):
   plt.show(block=False)
 
 
+def plot_spectrogram(spec, title=None, ylabel='freq_bin', aspect='auto', xmax=None):
+  fig, axs = plt.subplots(1, 1)
+  axs.set_title(title or 'Spectrogram (db)')
+  axs.set_ylabel(ylabel)
+  axs.set_xlabel('frame')
+  im = axs.imshow(librosa.power_to_db(spec), origin='lower', aspect=aspect)
+  if xmax:
+    axs.set_xlim((0, xmax))
+  fig.colorbar(im, ax=axs)
+  plt.show(block=False)
+
+
 def play_audio(waveform, sample_rate):
   waveform = waveform.numpy()
 
@@ -85,3 +97,33 @@ def play_audio(waveform, sample_rate):
     display(Audio((waveform[0], waveform[1]), rate=sample_rate))
   else:
     raise ValueError("Waveform with more than 2 channels are not supported.")
+
+
+
+
+# Define a function to plot accuracy and loss
+
+def plot_accuracy_loss(training_results): 
+    plt.subplot(2, 1, 1)
+    plt.plot(training_results['training_loss'], 'r')
+    plt.ylabel('loss')
+    plt.title('training loss iterations')
+    plt.subplot(2, 1, 2)
+    plt.plot(training_results['validation_accuracy'])
+    plt.ylabel('accuracy')
+    plt.xlabel('epochs')   
+    plt.show()
+
+
+# Define a function to plot model parameters
+
+def print_model_parameters(model):
+    count = 0
+    for ele in model.state_dict():
+        count += 1
+        if count % 2 != 0:
+            print ("The following are the parameters for the layer ", count // 2 + 1)
+        if ele.find("bias") != -1:
+            print("The size of bias: ", model.state_dict()[ele].size())
+        else:
+            print("The size of weights: ", model.state_dict()[ele].size())
