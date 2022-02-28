@@ -1,1 +1,0 @@
-/Users/stephen/code/projects/Speech_Recognition/Data/LibriSpeech/train-clean-100/5022/29411/5022-29411.trans.txt
