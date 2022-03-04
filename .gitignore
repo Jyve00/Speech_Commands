@@ -3,7 +3,8 @@
 *.wav
 *.flac
 *.mp3
-.Data
+.Data/
+*.txt 
 
 
 
