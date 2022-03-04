@@ -9,3 +9,6 @@ import torchaudio
 #   Specaug 
 #   Noise 
 #   Lombard effect 
+#   Reverb 
+#   Phone simulate 
+#   Pre-emphasis 
