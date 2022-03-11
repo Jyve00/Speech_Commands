@@ -1,10 +1,6 @@
 import numpy as np 
 
 
-
-
-
-
 def avg_wer(wer_scores, combined_ref_len):
     return float(sum(wer_scores)) / float(combined_ref_len)
 
